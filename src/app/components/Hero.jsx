@@ -2,7 +2,7 @@ import Image from "next/image";
 const points = [
   {
     number: "01",
-    title: "Обо мне",
+    title: "Руслан Гулишевский",
     id: "",
   },
   {
@@ -27,14 +27,14 @@ export default function Hero() {
     <div className="max-w-7xl px-6 mx-auto">
       <div className="mx-auto flex flex-row justify-center gap-12">
         <div className="mt-40 relative">
-          <h2 className="mt-5 text-pretty text-2xl font-semibold tracking-tight text-gray-900 max-w-lg uppercase font-sans ">
-            Ручной метод диагностики, профилактики и терапии, применяемый
-            специалистом
+          <h2 className="mt-3 text-pretty text-2xl font-semibold tracking-tight text-gray-900 max-w-lg uppercase font-sans ">
+            это современный, мягкий и комплексный подход к восстановлению
+            здоровья
           </h2>
           <p className="mt-4 text-sm font-regular text-gray-600  max-w-md">
             Здоровье всего организма влияет на внешний вид и жизненный тонус,
-            поэтому важен всесторонний подход к диагностике и терапии
-            заболеваний опорно-двигательного аппарата.
+            поэтому так важено приминение всестороннего подхода к диагностике и
+            терапии заболеваний опорно-двигательного аппарата.
           </p>
           <div className=" mt-20 divide-y divide-gray-900/10 ">
             {points.map((point) => (
@@ -54,7 +54,7 @@ export default function Hero() {
             ))}
           </div>
 
-          <h1 className="mt-10 w-full font-light tracking-tight text-gray-900 uppercase font-sans text-4xl sm:text-6xl md:text-8xl lg:text-[120px] xl:text-[300px] absolute z-2 -top-42 -left-3">
+          <h1 className="mt-10 w-full font-light tracking-tight text-gray-900 uppercase font-sans text-4xl sm:text-6xl md:text-8xl lg:text-[120px] xl:text-[120px] absolute z-2 -top-42 -left-3">
             остеопатия
           </h1>
         </div>
