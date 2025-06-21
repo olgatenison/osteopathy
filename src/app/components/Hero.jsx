@@ -7,7 +7,7 @@ const points = [
   },
   {
     number: "02",
-    title: "Услуги",
+    title: "мои Услуги",
     id: "",
   },
   {
@@ -24,26 +24,26 @@ const points = [
 
 export default function Hero() {
   return (
-    <div className="max-w-7xl px-6 mx-auto">
-      <div className="mx-auto flex flex-row justify-center gap-12">
+    <div className="max-w-6xl px-6 mx-auto">
+      <div className="mx-auto flex flex-row justify-between gap-12">
         <div className="mt-40 relative">
-          <h2 className="mt-3 text-pretty text-2xl font-semibold tracking-tight text-gray-900 max-w-lg uppercase font-sans ">
+          <h2 className="mt-3 text-pretty text-2xl font-semibold tracking-tight text-gray-900 max-w-xl uppercase font-sans">
             это современный, мягкий и комплексный подход к восстановлению
             здоровья
           </h2>
-          <p className="mt-4 text-sm font-regular text-gray-600  max-w-md">
+          <p className="mt-4 text-lg/snug font-regular text-gray-600  max-w-md">
             Здоровье всего организма влияет на внешний вид и жизненный тонус,
             поэтому так важено приминение всестороннего подхода к диагностике и
             терапии заболеваний опорно-двигательного аппарата.
           </p>
-          <div className=" mt-20 divide-y divide-gray-900/10 ">
+          <div className="mt-20 divide-y divide-gray-900/10 ">
             {points.map((point) => (
               <div
                 key={point.number}
-                className=" first:pt-0 last:pb-0 uppercase font-sans "
+                className="first:pt-0 last:pb-0 uppercase font-sans"
               >
                 <div>
-                  <div className="group flex w-full items-start justify-between text-left text-gray-900">
+                  <div className="group flex w-full items-start justify-between text-left text-gray-900 py-2">
                     <span>{point.number}</span>
                     <span className="text-base/7 font-semibold">
                       {point.title}
