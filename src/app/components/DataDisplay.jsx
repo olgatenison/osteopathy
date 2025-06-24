@@ -112,7 +112,7 @@ export default function DataDisplay() {
           <div className="mt-2.5">
             <select
               name="serviceType"
-              className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-1 outline-gray-300 focus:outline-2 focus:outline-indigo-600"
+              className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline  outline-gray-300 focus:outline-2 focus:outline-indigo-600"
             >
               <option disabled selected value="">
                 Выберите услугу
