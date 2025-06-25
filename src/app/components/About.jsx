@@ -23,7 +23,7 @@ export default function About() {
   return (
     <>
       {/* Content section */}
-      <div className="mx-auto my-20 max-w-6xl px-6 lg:px-8">
+      <div className="mx-auto mb-20 max-w-6xl px-6 lg:px-8">
         <div>
           {" "}
           <div className="mx-auto flex justify-between gap-12 items-end">
@@ -35,19 +35,19 @@ export default function About() {
               />
             </div>
 
-            <div className="w-full lg:max-w-xl lg:flex-auto">
-              <h2 className="text-pretty  text-5xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
+            <div className="w-full lg:max-w-xl lg:flex-auto pl-12">
+              <h2 className="text-pretty  text-5xl font-light tracking-tight text-gray-900 uppercase font-sans ">
                 Руслан <br />
                 Гулишевский
               </h2>
-              <p className="mt-12 text-lg/snug font-regular text-gray-600  max-w-md">
-                Как член{" "}
+              <p className="mt-12 text-lg/8 font-regular text-gray-600  ">
+                Я — практикующий студент-остеопат и член{" "}
                 <span className="w-full flex-none  font-semibold tracking-tight text-gray-900">
-                  Baltic Osteopathic Association
+                  Baltic Osteopathic Association.
                 </span>
-                , я разделяю принципы современной остеопатии — целостному
-                подходу, уважению к телу и созданию доверительной, безопасной
-                атмосферы для каждого клиента.
+                В своей практике я опираюсь на ценности современной остеопатии —
+                целостный подход, уважение к телу и создание доверительной,
+                безопасной атмосферы для каждого.
               </p>
             </div>
           </div>
@@ -55,21 +55,14 @@ export default function About() {
             <h3 className="mt-5 text-pretty text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
               Больше обо мне
             </h3>
-            <p className="mt-10 max-w-3xl flex-none text-base/6 text-gray-600">
-              Я - практикующий студент-остеопат. В остеопатию меня привела вера
-              в то, что человеческое тело способно к естественной регенерации
-              при наличии соответствующих условий. Тело функционирует как единое
-              целое, и все его части взаимосвязаны. Физическое, психическое и
-              эмоциональное состояние влияют друг на друга, и нахождение баланса
-              между ними - ключ к целостному благополучию. Остеопатия может быть
-              эффективным решением многих проблем, и это вдохновляет меня
-              посвятить себя этой области. Моя цель как остеопата - найти
-              индивидуальный подход к каждому человеку, который поможет вернуть
-              ему хорошее самочувствие и удовольствие от жизни. Если вы
-              чувствуете, что нуждаетесь в поддержке, или хотите узнать больше о
-              том, как поддержать естественную способность организма к
-              восстановлению, смело обращайтесь ко мне! Вместе мы сможем найти
-              решение и путь к лучшему самочувствию.
+            <p className="mt-4 text-lg/8 font-regular text-gray-600  ">
+              Остеопатия вдохновила меня, потому что я верю: тело обладает
+              глубокой способностью к самовосстановлению, если создать для этого
+              условия. Моя цель — не просто устранить симптом, а найти
+              индивидуальный путь к улучшению самочувствия, восстановлению
+              подвижности и внутреннего равновесия. Если вы чувствуете, что
+              нуждаетесь в поддержке — или просто хотите лучше понимать своё
+              тело, — буду рад помочь.
             </p>
           </div>
         </div>

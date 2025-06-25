@@ -16,25 +16,25 @@ export default function Infografic() {
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
             <h2 className="mt-5 text-pretty text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans ">
-              Цифры, которые говорят сами за себя
+              Данные, отражающие практический эффект
             </h2>
-            <p className="mt-4 text-lg/snug font-regular text-gray-600 ">
+            <p className="mt-4 text-lg/8 font-regular text-gray-600 ">
               Остеопатия — это не только про спину. Это про здоровье всего
               организма.
             </p>
           </div>
-          <dl className="mt-16 grid grid-cols-1 gap-1 overflow-hidden text-center sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid grid-cols-1 gap-1 overflow-hidden text-center sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat) => (
               <div key={stat.id} className="flex flex-col bg-[#d6d8d5] p-4">
-                <dt className="text-sm  mt-3 font-regular text-gray-600 ">
+                <div className="text-sm  mt-3 font-regular text-gray-600 ">
                   {stat.name}
-                </dt>
-                <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900 font-sans">
+                </div>
+                <div className="order-first text-3xl font-semibold tracking-tight text-gray-900 font-sans">
                   {stat.value}
-                </dd>
+                </div>
               </div>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </div>

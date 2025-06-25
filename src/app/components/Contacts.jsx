@@ -2,13 +2,15 @@ import DataDisplay from "./DataDisplay";
 
 export default function Contacts() {
   return (
-    <div className="px-6 py-24 sm:py-32 lg:px-8">
+    <div className="px-6 py-24  bg-white sm:py-32 lg:px-8">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
-        <h2 className="text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-          Забронируйте визит
+        <h2 className="text-pretty  tracking-tight text-gray-900 text-6xl  uppercase font-sans  font-light ">
+          Запись на приём
         </h2>
         <p className="mt-2 text-lg/8 text-gray-600">
-          We help companies and individuals build out their brand guidelines.
+          Приглашаю на приём — в комфортной, спокойной обстановке мы вместе
+          подберём подход, который поможет вам восстановить подвижность, снизить
+          напряжение и почувствовать себя лучше.
         </p>
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
           <form action="#" method="POST" className="lg:flex-auto">

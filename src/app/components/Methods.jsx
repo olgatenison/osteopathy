@@ -7,19 +7,16 @@ import { MinusSmallIcon, PlusSmallIcon } from "@heroicons/react/24/outline";
 
 const faqs = [
   {
-    question: "Структурная ",
-    answer:
-      "работа с позвоночником, мышцами и суставами для восстановления подвижности и осанки.",
+    question: "Структурная",
+    answer: "работа с мышцами, фасциями, суставами, позвоночником",
   },
   {
     question: "Висцеральная",
-    answer:
-      "мягкое воздействие на внутренние органы и связочный аппарат, улучшение их функции.",
+    answer: "мягкое воздействие на внутренние органы",
   },
   {
     question: "Психосоматическая",
-    answer:
-      "понимание того, как эмоции и стресс отражаются на теле, работа с этими проявлениями.",
+    answer: "учитываю влияние эмоций и стресса на тело",
   },
 ];
 
@@ -29,7 +26,7 @@ export default function Methods() {
       <div className="mx-auto max-w-6xl pb-10 ">
         <div className="mr-0 max-w-xl">
           <h2 className="text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
-            Виды остеопатии, которые я практикую:
+            Я работаю в нескольких подходах остеопатии:
           </h2>
           <div className="mt-8 divide-y divide-gray-900/10 font-sans">
             {faqs.map((faq) => (
