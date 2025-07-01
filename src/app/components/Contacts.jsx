@@ -1,6 +1,11 @@
+"use client";
 import DataDisplay from "./DataDisplay";
+import { useState } from "react";
 
 export default function Contacts() {
+  const [selectedSlot, setSelectedSlot] = useState(null);
+  const [selectedDate, setSelectedDate] = useState(null);
+
   return (
     <div className="px-6 py-24  bg-white sm:py-32 lg:px-8">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
@@ -14,7 +19,10 @@ export default function Contacts() {
         </p>
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
           <form action="#" method="POST" className="lg:flex-auto">
-            <DataDisplay />
+            <DataDisplay
+              onSlotChange={setSelectedSlot}
+              onDateChange={setSelectedDate}
+            />
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label

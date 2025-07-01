@@ -34,13 +34,26 @@ export default function AdminSlots({ onSlotAdd, editingSlot }) {
   const handleSubmit = () => {
     if (!date || !startHour || !startMinute || !endHour || !endMinute) return;
 
+    // 🕒 проверка, что начало раньше конца
+    const startTime = parseInt(startHour) * 60 + parseInt(startMinute);
+    const endTime = parseInt(endHour) * 60 + parseInt(endMinute);
+
+    if (startTime >= endTime) {
+      alert("⛔ Время начала должно быть раньше времени окончания");
+      return;
+    }
+
     const newSlot = {
       start: `${startHour}:${startMinute}`,
       end: `${endHour}:${endMinute}`,
       booked: false,
     };
 
-    onSlotAdd(date, newSlot, editingSlot?.index ?? null);
+    if (typeof onSlotAdd === "function") {
+      onSlotAdd(date, newSlot, editingSlot?.index ?? null);
+    } else {
+      console.error("onSlotAdd не передан или не является функцией");
+    }
 
     // reset
     setDate("");

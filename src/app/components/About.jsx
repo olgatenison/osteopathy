@@ -41,10 +41,15 @@ export default function About() {
                 Гулишевский
               </h2>
               <p className="mt-12 text-lg/8 font-regular text-gray-600  ">
-                Я — практикующий студент-остеопат и член{" "}
-                <span className="w-full flex-none  font-semibold tracking-tight text-gray-900">
-                  Baltic Osteopathic Association.
-                </span>
+                Я — практикующий остеопат и член{" "}
+                <a
+                  href="https://www.e-boa.ee/osteopaatid/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="font-semibold tracking-tight text-gray-900 hover:underline focus:underline"
+                >
+                  Baltic Osteopathic Association.{" "}
+                </a>
                 В своей практике я опираюсь на ценности современной остеопатии —
                 целостный подход, уважение к телу и создание доверительной,
                 безопасной атмосферы для каждого.

@@ -1,25 +1,24 @@
 import Image from "next/image";
 const points = [
-  {},
   {
     number: "01",
     title: "Остеопатия в действии",
-    id: "",
+    id: "001",
   },
   {
     number: "02",
     title: "Руслан Гулишевский",
-    id: "",
+    id: "002",
   },
   {
     number: "03",
     title: "направления и методы",
-    id: "",
+    id: "003",
   },
   {
     number: "04",
     title: "Запись на приём",
-    id: "",
+    id: "004",
   },
 ];
 
@@ -40,7 +39,7 @@ export default function Hero() {
           <div className="mt-20 divide-y divide-gray-900/10 ">
             {points.map((point) => (
               <div
-                key={point.number}
+                key={point.id}
                 className="first:pt-0 last:pb-0 uppercase font-sans"
               >
                 <div>
