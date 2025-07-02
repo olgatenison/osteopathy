@@ -1,125 +1,209 @@
 "use client";
+
 import DataDisplay from "./DataDisplay";
 import { useState } from "react";
+import { validateForm } from "@/utils/validateForm";
+import { supabase } from "@/lib/supabase";
 
 export default function Contacts() {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
+  const [formErrors, setFormErrors] = useState({});
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = {
+      firstName: formData.get("first-name"),
+      lastName: formData.get("last-name"),
+      phone: formData.get("phone"),
+      email: formData.get("e-mail"),
+      message: formData.get("message"),
+      selectedDate,
+      selectedSlot,
+    };
+
+    const errors = validateForm(data);
+    setFormErrors(errors);
+
+    if (Object.keys(errors).length > 0) return;
+
+    try {
+      let clientId;
+
+      // 1️⃣ Проверка: есть ли клиент с таким email
+      const { data: existingClients, error: findError } = await supabase
+        .from("clients")
+        .select("id")
+        .eq("email", data.email)
+        .limit(1);
+
+      if (findError) {
+        console.error("❌ Ошибка при поиске клиента:", findError);
+        alert("Ошибка при отправке формы. Попробуйте позже.");
+        return;
+      }
+
+      if (existingClients.length > 0) {
+        clientId = existingClients[0].id;
+      } else {
+        // 2️⃣ Добавление нового клиента
+        const { data: newClient, error: clientError } = await supabase
+          .from("clients")
+          .insert([
+            {
+              first_name: data.firstName,
+              last_name: data.lastName,
+              phone: data.phone,
+              email: data.email,
+            },
+          ])
+          .select("id")
+          .single();
+
+        if (clientError) {
+          console.error("❌ Ошибка при создании клиента:", clientError);
+          alert("Ошибка при отправке формы. Попробуйте позже.");
+          return;
+        }
+
+        clientId = newClient.id;
+      }
+
+      // 3️⃣ Обновление слота
+      const { error: slotError } = await supabase
+        .from("slots")
+        .update({
+          booked: true,
+          client_id: clientId,
+          message: data.message,
+        })
+        .eq("id", data.selectedSlot?.id);
+
+      if (slotError) {
+        console.error("❌ Ошибка при обновлении слота:", slotError);
+        alert("Клиент сохранён, но слот не обновлён.");
+      } else {
+        alert("✅ Заявка успешно отправлена!");
+        e.target.reset();
+        setSelectedSlot(null);
+        setSelectedDate(null);
+      }
+    } catch (err) {
+      console.error("❌ Неизвестная ошибка:", err);
+      alert("Произошла ошибка. Попробуйте позже.");
+    }
+  };
 
   return (
-    <div className="px-6 py-24  bg-white sm:py-32 lg:px-8">
+    <div className="px-6 py-24 bg-white sm:py-32 lg:px-8">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
-        <h2 className="text-pretty  tracking-tight text-gray-900 text-6xl  uppercase font-sans  font-light ">
+        <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900">
           Запись на приём
         </h2>
-        <p className="mt-2 text-lg/8 text-gray-600">
+        <p className="mt-2 text-lg text-gray-600">
           Приглашаю на приём — в комфортной, спокойной обстановке мы вместе
           подберём подход, который поможет вам восстановить подвижность, снизить
           напряжение и почувствовать себя лучше.
         </p>
+
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
-          <form action="#" method="POST" className="lg:flex-auto">
+          <form onSubmit={handleSubmit} className="lg:flex-auto">
             <DataDisplay
               onSlotChange={setSelectedSlot}
               onDateChange={setSelectedDate}
             />
+            {formErrors.selectedDate && (
+              <p className="text-sm text-red-600">{formErrors.selectedDate}</p>
+            )}
+            {formErrors.selectedSlot && (
+              <p className="text-sm text-red-600">{formErrors.selectedSlot}</p>
+            )}
+
             <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
               <div className="sm:col-span-2">
                 <label
                   htmlFor="message"
-                  className="block text-sm/6 font-semibold text-gray-900"
+                  className="block text-sm font-semibold text-gray-900"
                 >
-                  Message
+                  Сообщение
                 </label>
                 <div className="mt-2.5">
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                    defaultValue={""}
+                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                    defaultValue=""
                   />
                 </div>
               </div>
-              <div>
-                <label
-                  htmlFor="first-name"
-                  className="block text-sm/6 font-semibold text-gray-900"
-                >
-                  Имя
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    id="first-name"
-                    name="first-name"
-                    type="text"
-                    autoComplete="given-name"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline  -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
+
+              {[
+                {
+                  id: "first-name",
+                  label: "Имя",
+                  autoComplete: "given-name",
+                  error: "firstName",
+                },
+                {
+                  id: "last-name",
+                  label: "Фамилия",
+                  autoComplete: "family-name",
+                  error: "lastName",
+                },
+                {
+                  id: "phone",
+                  label: "Номер телефона",
+                  autoComplete: "tel",
+                  error: "phone",
+                },
+                {
+                  id: "e-mail",
+                  label: "Электронная почта",
+                  autoComplete: "email",
+                  error: "email",
+                },
+              ].map(({ id, label, autoComplete, error }) => (
+                <div key={id}>
+                  <label
+                    htmlFor={id}
+                    className="block text-sm font-semibold text-gray-900"
+                  >
+                    {label}
+                  </label>
+                  <div className="mt-2.5">
+                    <input
+                      id={id}
+                      name={id}
+                      type="text"
+                      autoComplete={autoComplete}
+                      className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline outline-gray-300 placeholder:text-gray-400 focus:outline-indigo-600"
+                    />
+                    {formErrors[error] && (
+                      <p className="mt-1 text-sm text-red-600">
+                        {formErrors[error]}
+                      </p>
+                    )}
+                  </div>
                 </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="last-name"
-                  className="block text-sm/6 font-semibold text-gray-900"
-                >
-                  Фамилия
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    id="last-name"
-                    name="last-name"
-                    type="text"
-                    autoComplete="family-name"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm/6 font-semibold text-gray-900"
-                >
-                  phone
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    id="phone"
-                    name="phone"
-                    type="text"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="e-mail"
-                  className="block text-sm/6 font-semibold text-gray-900"
-                >
-                  e-mail
-                </label>
-                <div className="mt-2.5">
-                  <input
-                    id="e-mail"
-                    name="e-mail"
-                    type="url"
-                    className="block w-full rounded-md bg-white px-3.5 py-2 text-base text-gray-900 outline -outline-offset-1 outline-gray-300 placeholder:text-gray-400  focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600"
-                  />
-                </div>
-              </div>
-            </div>{" "}
+              ))}
+            </div>
+
             <div className="mt-10">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-indigo-600"
               >
-                Let’s talk
+                Отправить
               </button>
             </div>
-            <p className="mt-4 text-sm/6 text-gray-500">
-              By submitting this form, I agree to the{" "}
-              <a href="#" className="font-semibold text-indigo-600">
-                privacy&nbsp;policy
+
+            <p className="mt-4 text-sm text-gray-500">
+              Отправляя форму, вы соглашаетесь с{" "}
+              <a href="#" className="font-bold text-gray-900">
+                политикой конфиденциальности
               </a>
               .
             </p>

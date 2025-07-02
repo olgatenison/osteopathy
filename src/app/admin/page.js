@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../lib/supabase";
 import AdminSlots from "../components/AdminSlots";
 import AdminSlotTable from "../components/AdminSlotTable";
+import BookingsList from "../components/BookingsList";
+import ClientsList from "../components/ClientsList";
 
 export default function AdminPage() {
   const [slots, setSlots] = useState({});
@@ -112,6 +114,8 @@ export default function AdminPage() {
           />
         </div>
       </div>
+      <BookingsList />
+      <ClientsList />
     </div>
   );
 }
