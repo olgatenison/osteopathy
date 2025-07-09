@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from "react";
 import { supabase } from "../../lib/supabase";
-import AdminSlots from "../components/AdminSlots";
-import AdminSlotTable from "../components/AdminSlotTable";
-import BookingsList from "../components/BookingsList";
-import ArchivedBookingsList from "../components/ArchivedBookingsList";
-import ClientsList from "../components/ClientsList";
+import AdminSlots from "../../components/AdminSlots";
+import AdminSlotTable from "../../components/AdminSlotTable";
+import BookingsList from "../../components/BookingsList";
+import ArchivedBookingsList from "../../components/ArchivedBookingsList";
+import ClientsList from "../../components/ClientsList";
 
 import {
   Bars3Icon,

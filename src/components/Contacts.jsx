@@ -1,9 +1,8 @@
 "use client";
-
-import DataDisplay from "./DataDisplay";
 import { useState } from "react";
 import { validateForm } from "@/utils/validateForm";
 import { supabase } from "@/lib/supabase";
+import DataDisplay from "./DataDisplay";
 
 export default function Contacts() {
   const [selectedSlot, setSelectedSlot] = useState(null);
@@ -97,18 +96,18 @@ export default function Contacts() {
   };
 
   return (
-    <div className="px-6 py-24 bg-white sm:py-32 lg:px-8">
+    <div id="contact" className="px-6 py-24   lg:px-8 ">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
         <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900">
-          Запись на приём
+          Запишись на приём
         </h2>
-        <p className="mt-2 text-lg text-gray-600">
+        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
           Приглашаю на приём — в комфортной, спокойной обстановке мы вместе
           подберём подход, который поможет вам восстановить подвижность, снизить
           напряжение и почувствовать себя лучше.
         </p>
 
-        <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row">
+        <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row bg-gray-50 p-8">
           <form onSubmit={handleSubmit} className="lg:flex-auto">
             <DataDisplay
               onSlotChange={setSelectedSlot}
@@ -194,7 +193,7 @@ export default function Contacts() {
             <div className="mt-10">
               <button
                 type="submit"
-                className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white hover:bg-indigo-500 focus-visible:outline-indigo-600"
+                className="block w-full rounded-md bg-gray-800 px-3.5 py-3 text-center text-lg font-semibold text-white hover:bg-[#a1a49f]  focus-visible:outline-gray-800 uppercase"
               >
                 Отправить
               </button>
@@ -202,7 +201,7 @@ export default function Contacts() {
 
             <p className="mt-4 text-sm text-gray-500">
               Отправляя форму, вы соглашаетесь с{" "}
-              <a href="#" className="font-bold text-gray-900">
+              <a href="/privacy" className="font-bold text-gray-900">
                 политикой конфиденциальности
               </a>
               .

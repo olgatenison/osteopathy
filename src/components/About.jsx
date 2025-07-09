@@ -36,7 +36,7 @@ export default function About() {
             </div>
 
             <div className="w-full lg:max-w-xl lg:flex-auto pl-12">
-              <h2 className="text-pretty  text-5xl font-light tracking-tight text-gray-900 uppercase font-sans ">
+              <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900 ">
                 Руслан <br />
                 Гулишевский
               </h2>

@@ -25,9 +25,9 @@ const points = [
 
 export default function Help() {
   return (
-    <div className="mx-auto my-20 max-w-6xl px-6 lg:px-8">
+    <div className="mx-auto my-24 max-w-6xl px-6 lg:px-8">
       {" "}
-      <h2 className="text-pretty  text-6xl font-light tracking-tight text-gray-900 uppercase font-sans ">
+      <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900">
         Как остеопат помогает
         <br /> телу восстановиться?
       </h2>

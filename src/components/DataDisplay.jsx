@@ -188,7 +188,9 @@ export default function DataDisplay({ onSlotChange, onDateChange }) {
         )}
 
         {!selectedDate && (
-          <p className="text-sm text-gray-500">Выберите дату слева</p>
+          <p className="block text-sm font-semibold text-gray-900">
+            Выберите дату слева
+          </p>
         )}
       </div>
     </div>

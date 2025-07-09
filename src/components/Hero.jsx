@@ -26,7 +26,7 @@ export default function Hero() {
   return (
     <div className="max-w-6xl px-6 mx-auto">
       <div className="mx-auto flex flex-row justify-between gap-12">
-        <div className="mt-40 relative">
+        <div className="mt-60 relative">
           <h2 className="mt-3 text-pretty text-2xl font-semibold tracking-tight text-gray-900 max-w-xl uppercase font-sans">
             это современный, мягкий и комплексный подход к восстановлению
             здоровья

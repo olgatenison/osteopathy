@@ -11,7 +11,7 @@ const stats = [
 
 export default function Infografic() {
   return (
-    <div className="pt-20">
+    <div className="pt-20 pb-10">
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
           <div className="text-center">
