@@ -84,6 +84,23 @@ export default function Contacts() {
         console.error("❌ Ошибка при обновлении слота:", slotError);
         alert("Клиент сохранён, но слот не обновлён.");
       } else {
+        // 📧 Отправляем уведомление админу
+        await fetch("/api/notify-admin", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            clientName: `${data.firstName} ${data.lastName}`,
+            clientEmail: data.email,
+            clientPhone: data.phone,
+            appointmentDate: selectedDate,
+            selectedSlot: {
+              start: selectedSlot?.start,
+              end: selectedSlot?.end,
+            },
+            message: data.message,
+          }),
+        });
+
         alert("✅ Заявка успешно отправлена!");
         e.target.reset();
         setSelectedSlot(null);
