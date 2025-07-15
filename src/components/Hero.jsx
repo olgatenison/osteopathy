@@ -4,22 +4,22 @@ const points = [
   {
     number: "01",
     title: "Остеопатия в действии",
-    id: "001",
+    id: "osteopathy",
   },
   {
     number: "02",
     title: "Руслан Гулишевский",
-    id: "002",
+    id: "about",
   },
   {
     number: "03",
     title: "Направления и методы",
-    id: "003",
+    id: "method",
   },
   {
     number: "04",
     title: "Запись на приём",
-    id: "004",
+    id: "contact",
   },
 ];
 

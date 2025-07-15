@@ -3,6 +3,7 @@ export default function About() {
     <section
       className="mx-auto mb-20 max-w-6xl px-6 lg:px-8"
       aria-labelledby="about-heading"
+      id="about"
     >
       <div className="mx-auto flex justify-between gap-6 lg:gap-12 items-end md:flex-row flex-col">
         {/* Фото */}

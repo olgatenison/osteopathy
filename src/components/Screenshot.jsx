@@ -1,6 +1,7 @@
 export default function Screenshot() {
   return (
     <section
+      id="method"
       className="w-full pb-8 px-6 lg:px-8"
       aria-labelledby="screenshot-heading"
     >

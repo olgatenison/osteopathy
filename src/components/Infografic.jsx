@@ -14,6 +14,7 @@ export default function Infografic() {
     <section
       className="pt-10 md:pt-20 pb-10"
       aria-labelledby="infographic-heading"
+      id="osteopathy"
     >
       <div className="mx-auto max-w-5xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:max-w-none">
