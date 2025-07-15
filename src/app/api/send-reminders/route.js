@@ -1,11 +1,10 @@
-// pages/api/send-reminders.js
 import { supabase } from "@/lib/supabase";
+import { NextResponse } from "next/server";
 
-export default async function handler(req, res) {
+export async function POST() {
   const now = new Date();
   const in24h = new Date(now.getTime() + 24 * 60 * 60 * 1000);
 
-  // 1️⃣ Знаходимо слоти через 24 години
   const { data: slots, error } = await supabase
     .from("slots")
     .select("id, start, client_id, clients (email, first_name)")
@@ -16,14 +15,16 @@ export default async function handler(req, res) {
 
   if (error) {
     console.error("❌ Помилка пошуку слотів:", error);
-    return res.status(500).json({ error: "Помилка пошуку слотів" });
+    return NextResponse.json(
+      { error: "Помилка пошуку слотів" },
+      { status: 500 }
+    );
   }
 
   for (const slot of slots) {
     const { email, first_name } = slot.clients;
 
-    // 2️⃣ Надсилаємо лист
-    await fetch("/api/send-email", {
+    await fetch(`${process.env.BASE_URL}/api/send-email`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -31,16 +32,16 @@ export default async function handler(req, res) {
         subject: "Нагадування про запис",
         text: `Привіт, ${first_name}! Нагадуємо, що у вас запис на ${new Date(
           slot.start
-        ).toLocaleString()}`,
+        ).toLocaleString()}.`,
       }),
     });
 
-    // 3️⃣ Позначаємо як надіслано
+    // відзначаємо як відправлене
     await supabase
       .from("slots")
       .update({ reminder_sent: true })
       .eq("id", slot.id);
   }
 
-  res.status(200).json({ message: "Нагадування надіслані" });
+  return NextResponse.json({ message: "Нагадування надіслані" });
 }
