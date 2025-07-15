@@ -9,6 +9,8 @@ import Footer from "../components/Footer";
 import Help from "../components/Help";
 import GetInTouch from "../components/GetInTouch";
 import Button from "../components/Button";
+import Cookie from "@/components/Cookie";
+
 export default function Home() {
   return (
     <>
@@ -23,6 +25,7 @@ export default function Home() {
       <GetInTouch />
       <Contacts />
       <Footer />
+      <Cookie />
     </>
   );
 }
