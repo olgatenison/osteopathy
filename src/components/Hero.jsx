@@ -52,7 +52,7 @@ export default function Hero() {
             className="mt-12 md:mt-20 divide-y divide-gray-900/10"
             aria-label="Основные разделы сайта"
           >
-            <ul role="list" className="space-y-2">
+            <ul role="list" className="space-y-2 divide-y divide-gray-900/20">
               {points.map((point) => (
                 <li
                   key={point.id}

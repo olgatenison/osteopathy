@@ -33,14 +33,14 @@ export default function Help() {
 
         {/* Список проблем */}
         <ul
-          className="mt-3 list-disc list-inside text-gray-600 space-y-1 divide-y divide-gray-900/10 max-w-xl mr-0 md:self-end"
+          className="mt-3 list-disc list-inside text-gray-600 space-y-1 divide-y divide-gray-900/20 max-w-xl mr-0 md:self-end "
           role="list"
           aria-label="Проблемы, с которыми помогает остеопат"
         >
           {problems.map((item, index) => (
             <li
               key={index}
-              className="first:pt-0 last:pb-0 uppercase font-sans text-base/7 font-semibold"
+              className="first:pt-0 last:pb-0 uppercase font-sans text-base/7 font-semibold "
             >
               {item}
             </li>

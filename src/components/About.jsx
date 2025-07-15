@@ -43,7 +43,7 @@ export default function About() {
       </div>
 
       {/* Больше обо мне */}
-      <div className="mt-12 md:pl-70 border-b border-gray-900/10 pb-4 md:pb-12">
+      <div className="mt-12 md:pl-70 border-b border-gray-900/20 pb-4 md:pb-12">
         <h3 className="md:mt-5 text-pretty text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
           Больше обо мне
         </h3>

@@ -33,7 +33,7 @@ export default function Methods() {
     <section>
       <div className="mx-auto max-w-6xl pb-10 px-6 md:px-8">
         <div className="mr-0 w-full md:max-w-xl">
-          <div className="mt-8 divide-y divide-gray-900/10 font-sans">
+          <div className="mt-8 divide-y divide-gray-900/20 font-sans">
             {faqs.map((faq) => (
               <Disclosure
                 key={faq.question}
