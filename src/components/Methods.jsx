@@ -31,11 +31,8 @@ const faqs = [
 export default function Methods() {
   return (
     <div className="">
-      <div className="mx-auto max-w-6xl pb-10 ">
-        <div className="mr-0 max-w-xl">
-          {/* <h2 className="text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
-            Я работаю в нескольких подходах остеопатии:
-          </h2> */}
+      <div className="mx-auto max-w-6xl pb-10 px-6 md:px-8">
+        <div className="mr-0 w-full md:max-w-xl">
           <div className="mt-8 divide-y divide-gray-900/10 font-sans">
             {faqs.map((faq) => (
               <Disclosure
@@ -69,14 +66,15 @@ export default function Methods() {
             ))}
           </div>
         </div>
+
         {/* Картинка снизу, по правому краю */}
-        <div className="mt-10 flex justify-end">
+        <div className="mt-10 flex lg:justify-end">
           <div
-            className="bg-cover bg-center h-[300px] w-[300px]"
+            className="bg-cover bg-center h-[300px] w-[300px] hidden md:block"
             style={{ backgroundImage: "url('/bg-6.jpg')" }}
           ></div>
           <div
-            className="bg-cover bg-center h-[300px] w-[600px] mt-[300px]"
+            className="bg-cover bg-center h-[300px] w-full md:w-[600px] md:mt-[300px]"
             style={{ backgroundImage: "url('/bg-8.jpg')" }}
           ></div>
         </div>

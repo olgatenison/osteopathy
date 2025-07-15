@@ -1,78 +1,60 @@
-// І чоловік входить у Балтійська Остеопатична Асоціація.
-
-// Так в записі потрібно віконечко з часом.Прийом 30 ,40 хв.Оці всі маніпуляції тести і тестування це все входить в прийом бо шукають причину чого виникла та чи інша проблема.
-
-// В нього здебільшого українці і російсько мовні мабуть пока російською.Так є сертифікат про 2 роки навчання і зараз залишається ще 1.5 років це вже на лікаря остеопатії.Кожного року вони захищають курсову і клінічний екзамен.І ось має за два роки 2 сертифіката і ще залишилось довчитись 1,5 р.
-// Світлана
-// Так, описати  скільки триває прийом  і що входить і які терапії   використовуються.По відгуках зараз подивиться
-
-// Порадились ми з чоловіком.Він показав що він хоче.Історія така коли у фейсбуці чи інстаграмі випадає реклама у нижньому правому куту є кнопка перейти і ми переходимо на сайт тієї людини.Там можна забронювати  дату на прийом і опис послуг.Наприклад масаж класичний і так далі.Я так зрозуміла то по вашій частині .
-const jobOpenings = [
-  {
-    id: 1,
-    role: "Oбо мне",
-    href: "https://www.e-boa.ee/osteopaatid/",
-    description:
-      "Я - практикующий студент-остеопат. В остеопатию меня привела вера в то, что человеческое тело способно к естественной регенерации при наличии соответствующих условий. Тело функционирует как единое целое, и все его части взаимосвязаны. Физическое, психическое и эмоциональное состояние влияют друг на друга, и нахождение баланса между ними - ключ к целостному благополучию. Остеопатия может быть эффективным решением многих проблем, и это вдохновляет меня посвятить себя этой области. Моя цель как остеопата - найти индивидуальный подход к каждому человеку, который поможет вернуть ему хорошее самочувствие и удовольствие от жизни. Если вы чувствуете, что нуждаетесь в поддержке, или хотите узнать больше о том, как поддержать естественную способность организма к восстановлению, смело обращайтесь ко мне! Вместе мы сможем найти решение и путь к лучшему самочувствию.",
-    salary: "$75,000 USD",
-    location: "San Francisco, CA",
-  },
-];
-// 1055; 1271;
 export default function About() {
   return (
-    <>
-      {/* Content section */}
-      <div className="mx-auto mb-20 max-w-6xl px-6 lg:px-8">
-        <div>
-          {" "}
-          <div className="mx-auto flex justify-between gap-12 items-end">
-            <div className="w-full lg:max-w-lg lg:flex-auto">
-              <img
-                alt=""
-                src="/ruslan2.jpg"
-                className="aspect-[6/5] w-full bg-gray-50 object-cover lg:aspect-auto lg:h-[38rem]"
-              />
-            </div>
+    <section
+      className="mx-auto mb-20 max-w-6xl px-6 lg:px-8"
+      aria-labelledby="about-heading"
+    >
+      <div className="mx-auto flex justify-between gap-6 lg:gap-12 items-end md:flex-row flex-col">
+        {/* Фото */}
+        <div className="w-full lg:max-w-lg lg:flex-auto">
+          <img
+            alt="Остеопат Руслан"
+            src="/ruslan2.jpg"
+            className="aspect-[5/6] w-full bg-gray-50 object-cover lg:aspect-auto lg:h-[38rem]"
+          />
+        </div>
 
-            <div className="w-full lg:max-w-xl lg:flex-auto pl-12">
-              <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900 ">
-                Руслан <br />
-                Гулишевский
-              </h2>
-              <p className="mt-12 text-lg/8 font-regular text-gray-600  ">
-                Я — практикующий остеопат и член{" "}
-                <a
-                  href="https://www.e-boa.ee/osteopaatid/"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="font-semibold tracking-tight text-gray-900 hover:underline focus:underline"
-                >
-                  Baltic Osteopathic Association.{" "}
-                </a>
-                В своей практике я опираюсь на ценности современной остеопатии —
-                целостный подход, уважение к телу и создание доверительной,
-                безопасной атмосферы для каждого.
-              </p>
-            </div>
-          </div>
-          <div className="mt-12 pl-70 border-b-1 border-gray-900/10  pb-12">
-            <h3 className="mt-5 text-pretty text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
-              Больше обо мне
-            </h3>
-            <p className="mt-4 text-lg/8 font-regular text-gray-600  ">
-              Остеопатия вдохновила меня, потому что я верю: тело обладает
-              глубокой способностью к самовосстановлению, если создать для этого
-              условия. Моя цель — не просто устранить симптом, а найти
-              индивидуальный путь к улучшению самочувствия, восстановлению
-              подвижности и внутреннего равновесия. Если вы чувствуете, что
-              нуждаетесь в поддержке — или просто хотите лучше понимать своё
-              тело, — буду рад помочь.
-            </p>
-          </div>
+        {/* Основной текст */}
+        <div className="w-full lg:max-w-xl lg:flex-auto md:pl-12">
+          <h2
+            id="about-heading"
+            className="text-4xl md:text-6xl uppercase font-sans font-light tracking-tight text-gray-900"
+          >
+            Руслан <br />
+            Гулишевский
+          </h2>
+          <p className="mt-12 text-lg/snug font-regular text-gray-600">
+            Я — практикующий остеопат и член{" "}
+            <a
+              href="https://www.e-boa.ee/osteopaatid/"
+              target="_blank"
+              rel="noreferrer noopener"
+              aria-label="Перейти на сайт Baltic Osteopathic Association"
+              className="font-semibold tracking-tight text-gray-900 hover:underline focus:underline"
+            >
+              Baltic Osteopathic Association
+            </a>
+            . В своей практике я опираюсь на ценности современной остеопатии —
+            целостный подход, уважение к телу и создание доверительной,
+            безопасной атмосферы для каждого.
+          </p>
         </div>
       </div>
-    </>
+
+      {/* Больше обо мне */}
+      <div className="mt-12 md:pl-70 border-b border-gray-900/10 pb-4 md:pb-12">
+        <h3 className="md:mt-5 text-pretty text-2xl md:text-3xl font-semibold tracking-tight text-gray-900 uppercase font-sans">
+          Больше обо мне
+        </h3>
+        <p className="mt-4 text-lg/snug font-regular text-gray-600">
+          Остеопатия вдохновила меня, потому что я верю: тело обладает глубокой
+          способностью к самовосстановлению, если создать для этого условия. Моя
+          цель — не просто устранить симптом, а найти индивидуальный путь к
+          улучшению самочувствия, восстановлению подвижности и внутреннего
+          равновесия. Если вы чувствуете, что нуждаетесь в поддержке — или
+          просто хотите лучше понимать своё тело, — буду рад помочь.
+        </p>
+      </div>
+    </section>
   );
 }
-// lg:h-[34.5rem]

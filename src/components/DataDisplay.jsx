@@ -148,7 +148,7 @@ export default function DataDisplay({ onSlotChange, onDateChange }) {
       </div>
 
       {/* Right side – отображение слотов */}
-      <div className="md:pl-6 ">
+      <div className="  pt-10 md:pt-0 md:pl-6 ">
         {selectedDate && (
           <>
             <h2 className="text-base font-semibold text-gray-900 mb-4">
@@ -189,7 +189,7 @@ export default function DataDisplay({ onSlotChange, onDateChange }) {
 
         {!selectedDate && (
           <p className="block text-sm font-semibold text-gray-900">
-            Выберите дату слева
+            Выберите дату в календаре
           </p>
         )}
       </div>

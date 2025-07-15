@@ -113,12 +113,12 @@ export default function Contacts() {
   };
 
   return (
-    <div id="contact" className="px-6 py-24   lg:px-8 ">
+    <div id="contact" className="px-6 py-16 lg:px-8 ">
       <div className="mx-auto max-w-xl lg:max-w-4xl">
-        <h2 className="text-6xl uppercase font-sans font-light tracking-tight text-gray-900">
+        <h2 className="text-3xl md:text-6xl uppercase font-sans font-light tracking-tight text-gray-900">
           Запишись на приём
         </h2>
-        <p className="mt-4 text-lg text-gray-600 max-w-2xl">
+        <p className="mt-4 text-lg/snug text-gray-600 max-w-2xl">
           Приглашаю на приём — в комфортной, спокойной обстановке мы вместе
           подберём подход, который поможет вам восстановить подвижность, снизить
           напряжение и почувствовать себя лучше.
@@ -218,7 +218,10 @@ export default function Contacts() {
 
             <p className="mt-4 text-sm text-gray-500">
               Отправляя форму, вы соглашаетесь с{" "}
-              <a href="/privacy" className="font-bold text-gray-900">
+              <a
+                href="/privacy"
+                className="font-bold text-gray-900 hover:underline"
+              >
                 политикой конфиденциальности
               </a>
               .
