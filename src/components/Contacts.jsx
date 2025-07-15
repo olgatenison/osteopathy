@@ -3,11 +3,19 @@ import { useState } from "react";
 import { validateForm } from "@/utils/validateForm";
 import { supabase } from "@/lib/supabase";
 import DataDisplay from "./DataDisplay";
+import Modal from "./Modal";
 
 export default function Contacts() {
   const [selectedSlot, setSelectedSlot] = useState(null);
   const [selectedDate, setSelectedDate] = useState(null);
   const [formErrors, setFormErrors] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    message: "",
+    type: "success", // или "error"
+    button_txt: "OK",
+  });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -101,14 +109,26 @@ export default function Contacts() {
           }),
         });
 
-        alert("✅ Заявка успешно отправлена!");
+        setModalContent({
+          title: "Заявка успешно отправлена!",
+          message: "Мы отправим вам письмо на почту в ближайшее время.",
+          type: "success",
+          button_txt: "Хорошо",
+        });
+        setIsModalOpen(true);
         e.target.reset();
         setSelectedSlot(null);
         setSelectedDate(null);
       }
     } catch (err) {
       console.error("❌ Неизвестная ошибка:", err);
-      alert("Произошла ошибка. Попробуйте позже.");
+      setModalContent({
+        title: "Ошибка",
+        message: "Ошибка при отправке формы. Попробуйте позже.",
+        type: "error",
+        button_txt: "Закрыть",
+      });
+      setIsModalOpen(true);
     }
   };
 
@@ -228,7 +248,15 @@ export default function Contacts() {
             </p>
           </form>
         </div>
-      </div>
+      </div>{" "}
+      <Modal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={modalContent.title}
+        message={modalContent.message}
+        type={modalContent.type}
+        button_txt={modalContent.button_txt}
+      />
     </div>
   );
 }
