@@ -1,5 +1,5 @@
 // utils/fetchSlots.js
-import { supabase } from "../lib/supabase";
+import { supabase } from "../supabase/client";
 
 export async function fetchSlots() {
   const { data, error } = await supabase

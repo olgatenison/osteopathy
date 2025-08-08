@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { supabase } from "@/lib/supabase";
-import MessageModal from "./MessageModal";
+import { supabase } from "@/supabase/client";
+import MessageModal from "../../components/MessageModal";
 
 export default function ArchivedBookingsList() {
   const [bookings, setBookings] = useState([]);

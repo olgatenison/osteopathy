@@ -12,7 +12,7 @@ import {
   addDays,
 } from "date-fns";
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/supabase/client";
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 import { ru } from "date-fns/locale";
 

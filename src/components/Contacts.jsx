@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { validateForm } from "@/utils/validateForm";
-import { supabase } from "@/lib/supabase";
+import { supabase } from "@/supabase/client";
 import DataDisplay from "./DataDisplay";
 import Modal from "./Modal";
 
