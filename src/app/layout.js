@@ -43,14 +43,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <head>
+      {/* <head>
         <meta
           property="og:image"
           content="https://www.osteobodyhacking.ee/og-image.jpg"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-      </head>
+      </head> */}
       <body
         className={`${geistMontserrat.variable} ${geistMono.variable} antialiased`}
       >
