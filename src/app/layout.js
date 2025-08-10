@@ -10,6 +10,7 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+const baseUrl = "https://www.osteobodyhacking.ee";
 
 export const metadata = {
   title: "Остеопатия в Таллине | Руслан Гулишевский",
@@ -24,8 +25,14 @@ export const metadata = {
       "Запишитесь на прием к остеопату Руслану Гулишевскому в Таллине для лечения и профилактики заболеваний опорно-двигательного аппарата.",
     url: "https://www.osteobodyhacking.ee",
     siteName: "Остеопатия в Таллине",
+
     images: [
-      "https://www.osteobodyhacking.ee/osteopathy-tallinn-ruslan-gulishchevsky.jpg",
+      {
+        url: `${baseUrl}/osteopathy-tallinn-ruslan-gulishchevsky.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Остеопатия в Таллине | Руслан Гулишевский",
+      },
     ],
   },
   robots: {
