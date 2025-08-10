@@ -35,7 +35,7 @@ export default function LoginPage() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
       <form onSubmit={handleLogin} className="bg-white p-6 rounded shadow w-96">
-        <h1 className="text-2xl mb-4">Вхід в систему</h1>
+        <h1 className="text-2xl mb-4">Вход в систему</h1>
         {error && <p className="text-red-500 mb-2">{error}</p>}
         <input
           type="email"
