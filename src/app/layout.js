@@ -22,7 +22,7 @@ export const metadata = {
     title: "Остеопатия в Таллине | Руслан Гулишевский",
     description:
       "Запишитесь на прием к остеопату Руслану Гулишевскому в Таллине для лечения и профилактики заболеваний опорно-двигательного аппарата.",
-    url: "https://osteobodyhacking.ee/",
+    url: "https://www.osteobodyhacking.ee",
     siteName: "Остеопатия в Таллине",
     images: ["publicosteopathy-tallinn-ruslan-gulishchevsky.jpg"],
   },
