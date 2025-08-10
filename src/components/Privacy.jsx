@@ -27,7 +27,7 @@ export default function Privacy() {
             при обработке персональных данных и о свободном перемещении таких
             данных (GDPR). Настоящая Политика применяется ко всей информации,
             которую мы можем получить о пользователях веб-сайта{" "}
-            <strong>https://thismywebsite.com</strong> (далее — «Сайт»).
+            <strong>https://osteobodyhacking.ee </strong> (далее — «Сайт»).
           </p>
         </div>
         <div className="mt-10 ">
@@ -171,10 +171,10 @@ export default function Privacy() {
             Мы можем периодически обновлять данную Политику. Последняя версия
             всегда доступна по адресу:{" "}
             <a
-              href="https://thismywebsite.com/privacy"
+              href="https://osteobodyhacking.ee/privacy"
               className="text-gray-900 font-semibold hover:underline"
             >
-              https://thismywebsite.com/privacy
+              https://osteobodyhacking.ee/privacy
             </a>
           </p>
         </div>
