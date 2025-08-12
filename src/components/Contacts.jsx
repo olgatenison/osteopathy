@@ -143,6 +143,11 @@ export default function Contacts() {
           подберём подход, который поможет вам восстановить подвижность, снизить
           напряжение и почувствовать себя лучше.
         </p>
+        <p>
+          <p className="mt-4 text-gray-900 block  font-semibold uppercase">
+            Стоимость приёма — 50 евро. Приём длится 30-40 минут.
+          </p>
+        </p>
 
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row bg-gray-50 p-8">
           <form onSubmit={handleSubmit} className="lg:flex-auto">
