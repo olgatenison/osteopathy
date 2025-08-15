@@ -51,6 +51,14 @@ When a client books an appointment, the system automatically sends an **email no
 
 The web application is optimized for **SEO** using **Next.js** and **React**. This ensures better visibility in search engines and improves **page load speed**, enhancing the client experience.
 
+---
+
+<p align="center">
+  <img src="public\prew2-osteo.jpg" alt="Project preview" width="600" />
+</p>
+
+---
+
 ## Tech Stack
 
 The project was built using cutting-edge technologies:
