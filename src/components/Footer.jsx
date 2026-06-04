@@ -79,7 +79,7 @@ export default function Footer() {
           ))}
         </div>
         <p className="mt-8 text-center text-sm/6 text-gray-600 md:order-1 md:mt-0">
-          &copy; 2025 Остеопат Руслан Гулишевский. Все права защищены.{" "}
+          &copy; 2026 Остеопат Руслан Гулишевский. Все права защищены.{" "}
           <a
             href="https://www.facebook.com/tenison.olga"
             target="_blank"
