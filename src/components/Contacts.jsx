@@ -145,7 +145,7 @@ export default function Contacts() {
         </p>
 
         <p className="mt-4 text-gray-900 block  font-semibold uppercase">
-          Стоимость приема — 60 евро. Детям до 14 лет — 50 евро.
+          Стоимость приема — 65 евро.
         </p>
         <div className="mt-16 flex flex-col gap-16 sm:gap-y-20 lg:flex-row bg-gray-50 p-8">
           <form onSubmit={handleSubmit} className="lg:flex-auto">
